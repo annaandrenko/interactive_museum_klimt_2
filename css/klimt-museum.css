@@ -1,0 +1,238 @@
+.km-section{max-width:1100px;margin:0 auto;padding:24px} /*контейнер секції (ширина, відступи)*/
+.km-title{margin:0 0 12px;font-size:28px} /*заголовок секції*/
+.km-muted{opacity:.75;margin:0 0 14px}
+
+.km-help{ /*блок підказки*/
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:14px;
+  padding:10px 12px;
+  background:#fff;
+  margin:10px 0 18px
+}
+
+.km-controls{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px} /*панель керування (пошук/фільтри/сортування)*/
+.km-input,.km-select{
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.12);
+  min-width:180px;
+  background:#fff
+}
+
+.km-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px} /*сітка карток експонатів*/
+.km-card{ /*картка експоната*/
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:18px;
+  overflow:hidden;
+  background:#fff
+}
+.km-img{width:100%;height:200px;object-fit:cover;display:block} /*прев’ю-картинки в картці*/
+.km-body{
+  display: flex;
+  flex-direction: column;
+  height: 100%;           /* КЛЮЧОВЕ */
+}
+.km-h3{margin:0 0 6px;font-size:18px}
+.km-meta{margin:0 0 10px;opacity:.7}
+.km-desc{margin:0 0 12px;opacity:.9}
+.km-actions{
+  margin-top: auto;     
+  display: flex;
+  justify-content: center; 
+  gap: 14px;
+  padding-top: 16px;
+} 
+
+.km-btn{
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.12);
+  background:#fff;
+  font-weight:600;
+  cursor:pointer
+}
+.km-btn--ghost{background:transparent}
+.km-btn--small{padding:8px 10px;border-radius:10px}
+
+/* Кнопки-іконки */
+.km-btn--icon{
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+}
+
+/* ===== Великі іконкові кнопки експонатів ===== */
+
+.km-actions{
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.km-btn--icon{
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: none;
+  cursor: pointer;
+
+  background: #EB8E3F; /* темне музейне тло */
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+/* іконка */
+.km-btn--icon .btn-icon{
+  width: 26px;
+  height: 26px; /* якщо іконка темна */
+}
+
+/* hover */
+.km-btn--icon:hover{
+  background: #6b5028; /* теплий темно-золотий */
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.45);
+}
+
+/* active / click */
+.km-btn--icon:active{
+  transform: scale(.96);
+}
+
+
+
+
+
+
+.km-route{
+  margin-top:22px;
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:18px;
+  background:#f6f3ee;
+  padding:14px
+}
+.km-routeHead{
+  display:flex;justify-content:space-between;gap:12px;
+  flex-wrap:wrap;align-items:center
+}
+.km-routeBtns{display:flex;gap:10px;flex-wrap:wrap}
+.km-routeList{margin:10px 0 0;padding-left:18px}
+.km-routeItem{
+  background:#fff;border:1px solid rgba(0,0,0,.12);
+  border-radius:14px;padding:10px;margin:10px 0;
+  display:flex;gap:10px;align-items:center
+}
+.km-routeThumb{
+  width:46px;height:46px;border-radius:12px;object-fit:cover;
+  border:1px solid rgba(0,0,0,.12)
+}
+.km-grab{opacity:.7;font-size:12px}
+
+.km-modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.72);
+  display:none;align-items:center;justify-content:center;
+  padding:16px;z-index:9999
+}
+.km-modal.open{display:flex}
+.km-modalBox{
+  max-width:900px;width:100%;
+  background:#fff;border-radius:18px;
+  padding:14px;position:relative
+}
+.km-x{
+  position:absolute;top:10px;right:10px;
+  width:42px;height:42px;border-radius:14px;
+  border:1px solid rgba(0,0,0,.12);
+  background:#fff;font-size:24px;cursor:pointer
+}
+.km-modalImg{
+  width:100%;max-height:60vh;object-fit:contain;
+  border-radius:14px;border:1px solid rgba(0,0,0,.12);
+  background:#000
+}
+
+.km-tourTop{
+  display:flex;justify-content:space-between;
+  align-items:center;gap:10px;margin-bottom:10px
+}
+.km-tourBtns{display:flex;gap:8px}
+
+@media (max-width: 980px){.km-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width: 640px){.km-grid{grid-template-columns:1fr}}
+
+/* ===== ZOOM + PAN inside frame (modal & tour) ===== */
+.km-zoomFrame{
+  width: 100%;
+  max-height: 60vh;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #000;
+  border: 1px solid rgba(0,0,0,.12);
+
+  --z: 1;
+  --x: 0px;
+  --y: 0px;
+}
+
+.km-zoomFrame img{
+  width: 100%;
+  height: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+
+  transform-origin: center center;
+  transform: translate(var(--x), var(--y)) scale(var(--z));
+  transition: transform .25s ease;
+
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.km-zoomFrame.is-zoomed{ --z: 2; } /* сила зуму */
+
+.km-zoomFrame.is-zoomed img{ cursor: grab; }
+
+.km-zoomFrame.is-dragging img{
+  cursor: grabbing;
+  transition: none;
+}
+
+.km-zoomWrap{
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.km-tourArrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10001; /* поверх картинки і тексту */
+}
+
+.km-tourArrow--prev{ left: 10px; }
+.km-tourArrow--next{ right: 10px; }
+
+
+.km-modalBox{ position: relative; }
+.km-x{ z-index: 10000; }
+/*колір підказки*/
+.km-hint{
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.35;
+  opacity: .45;          
+}
+
+
