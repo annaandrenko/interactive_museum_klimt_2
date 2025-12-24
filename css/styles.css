@@ -107,8 +107,8 @@ body{
   color:#111;
 }
 .btn--ghost{
-  background: transparent;
-  color:#fff;
+  background:#ebbf8e ;
+  color:#000000;
 }
 .btn--ghost-dark{
   background: transparent;
@@ -374,13 +374,11 @@ h3{ margin: 0 0 10px; font-size: 22px; }
   border-radius:12px;
 }
 
-
-/* Кнопка "Інтерактивний музей" у навбарі */
 .nav__museum{
   margin-left: 8px;
   padding: 8px 14px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #d4af37, #b48a2c);
+  background: linear-gradient(135deg, #d4af37, #eb823f);
   color: #fff !important;
   font-weight: 700;
   text-decoration: none;
@@ -395,5 +393,26 @@ h3{ margin: 0 0 10px; font-size: 22px; }
 }
 
 
+#kmStartTour{
+  background-color: #E85F3F;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}
 
+/* hover-ефект */
+#kmStartTour:hover{
+  background-color: #E85F3F;
+}
 
+#kmClearRoute{
+  background-color: #e87d3f;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+}
+
+/* hover-ефект */
+#kmClearRoute:hover{
+  background-color: #e87d3f;
+}
